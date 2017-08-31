@@ -316,7 +316,7 @@ mods.console = function() return {
 			local _print = print
 			print = function(...) 
 				local strings = {}
-				for k,v in pairs({...}) do strings[k] = tostring(v) end
+				for k,v in ipairs({...}) do strings[k] = tostring(v) end
 				self:print(table.concat(strings, "\t"))
 				_print(...)
 			end
